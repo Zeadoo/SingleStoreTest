@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    password: 123123
+    url: jdbc:singlestore://localhost:3306/ziad?createDatabaseIfNotExist=true
+    username: root
+    driver-class-name: com.singlestore.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.format_sql: true
+    show-sql: true
+
+  docker:
+    compose:
+      enabled: true
+      file: docker-compose.yml
+      stop:
+        timeout: 10000

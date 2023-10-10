@@ -1,0 +1,21 @@
+version: "3.8"
+
+name: singlestoredb
+services:
+  singlestoredb-dev:
+    image: ghcr.io/singlestore-labs/singlestoredb-dev
+    ports:
+      - 3306:3306
+      - 8080:8080
+      - 9000:9000
+    environment:
+      ROOT_PASSWORD: 123123
+      SINGLESTORE_LICENSE: BDZiNmFmZGY3YzMxOTRlMDY5Y2JkMjZiMDQ3OTM5ZWNhAAAAAAAAAAAEAAAAAAAAACgwNQIYcNb2EIGfEqZQf1kUJcph9GaGs6mfsnkAAhkAgMVgwGhS86U3q9h6cmkTkgE34l6gJp3YAA==
+
+    volumes:
+    - singlestore-data:/var/lib/memsql
+volumes:
+  singlestore-data:
+    driver: local
+
+
